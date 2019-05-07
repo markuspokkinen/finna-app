@@ -36,7 +36,6 @@
     <Content Include="README.md" />
     <Content Include="src\App.css" />
     <Content Include="src\index.css" />
-    <Content Include="src\logo.svg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\" />
@@ -45,6 +44,9 @@
   <ItemGroup>
     <Compile Include="src\App.js" />
     <Compile Include="src\App.test.js" />
+    <Compile Include="src\FormatClass.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\index.js" />
     <Compile Include="src\serviceWorker.js" />
   </ItemGroup>
