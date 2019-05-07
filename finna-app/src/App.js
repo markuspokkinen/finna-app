@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FormatClass from './FormatClass';
+import FormatCombiner from './FormatCombiner';
 import './App.css';
 
 
@@ -10,7 +10,7 @@ export default class App extends Component {
             facets: [],
             lang: "fi",
             status: "non",
-            selected: 0
+            selected: 0,
         }
     }
 
@@ -32,7 +32,7 @@ export default class App extends Component {
         this.setState({
             lang: event.target.value,
             status: "non",
-            selected :0
+            selected: 0
         }, () => {
             this.getfacets();
         })
@@ -56,12 +56,13 @@ export default class App extends Component {
                 <div>
                     {langSelect}
                     <div>
-                        {this.state.facets.map((element,index) => {
+                        {this.state.facets.map((element, index) => {
                             return <button key={element.value} index={index} onClick={this.buttonClick}>{element.translated}</button>
                         })}
                     </div>
-
-                    <FormatClass data={this.state.facets[this.state.selected]} />
+                    <div>
+                        <FormatCombiner data={this.state.facets[this.state.selected]} />
+                    </div>
                 </div>
             );
         }
